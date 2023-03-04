@@ -1,0 +1,551 @@
+<?php include 'sendEmail.php'?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      href="img/mobile-browser-development.ico"
+      type="image/x-icon"
+    />
+    <title>Portfólio</title>
+  </head>
+  <body class="bg-gray-100 dark:bg-body text-black dark:text-white pb-12">
+    <header class="py-6 text-black dark:text-white dark:bg-body lg:border-b-2">
+      <nav
+        class="container mx-auto px-8 md:px-14 lg:px-24 w-full flex justify-between items-center fixed lg:sticky"
+      >
+        <a
+          class="text-3xl font-bold leading-none"
+          href="mailto:harrison.munguambe17@gmail.com"
+        >
+          <svg
+            class="dark:fill-current text-white h-10 hidden lg:block"
+            alt="logo"
+            viewBox="0 0 100 100 "
+          >
+            <path
+              d="M100 34.2c-.4-2.6-3.3-4-5.3-5.3-3.6-2.4-7.1-4.7-10.7-7.1-8.5-5.7-17.1-11.4-25.6-17.1-2-1.3-4-2.7-6-4-1.4-1-3.3-1-4.8 0-5.7 3.8-11.5 7.7-17.2 11.5L5.2 29C3 30.4.1 31.8 0 34.8c-.1 3.3 0 6.7 0 10v16c0 2.9-.6 6.3 2.1 8.1 6.4 4.4 12.9 8.6 19.4 12.9 8 5.3 16 10.7 24 16 2.2 1.5 4.4 3.1 7.1 1.3 2.3-1.5 4.5-3 6.8-4.5 8.9-5.9 17.8-11.9 26.7-17.8l9.9-6.6c.6-.4 1.3-.8 1.9-1.3 1.4-1 2-2.4 2-4.1V37.3c.1-1.1.2-2.1.1-3.1 0-.1 0 .2 0 0zM54.3 12.3L88 34.8 73 44.9 54.3 32.4V12.3zm-8.6 0v20L27.1 44.8 12 34.8l33.7-22.5zM8.6 42.8L19.3 50 8.6 57.2V42.8zm37.1 44.9L12 65.2l15-10.1 18.6 12.5v20.1zM50 60.2L34.8 50 50 39.8 65.2 50 50 60.2zm4.3 27.5v-20l18.6-12.5 15 10.1-33.6 22.4zm37.1-30.5L80.7 50l10.8-7.2-.1 14.4z"
+            ></path>
+          </svg>
+        </a>
+        <div class="lg:hidden">
+          <!-- o hamburger para mobile -->
+          <button class="navbar-burger flex items-center text-blue-600 p-3">
+            <svg
+              width="26"
+              height="18"
+              viewBox="0 0 26 18"
+              xmlns="http://www.w3.org/2000/svg"
+              class="dark:fill-current text-white"
+            >
+              <path
+                d="M13 17.5H0.25V14.6667H13V17.5ZM25.75 10.4167H0.25V7.58333H25.75V10.4167ZM25.75 3.33333H13V0.5H25.75V3.33333Z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="hidden md:flex space-x-12 items-center">
+          <a href="#" class="text-selected-text">Home </a>
+          <a href="#clients">Profile</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#hire"
+            ><button class="px-6 py-2 bg-theme font-bold">Hire me</button></a
+          >
+        </div>
+      </nav>
+    </header>
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-gray-100 dark:bg-body border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8">
+          <a
+            class="mr-auto text-3xl font-bold leading-none"
+            href="mailto:harrison.munguambe17@gmail.com"
+          >
+            <svg
+              class="dark:fill-current text-white h-12"
+              alt="logo"
+              viewBox="0 0 100 100"
+            >
+              <path
+                d="M100 34.2c-.4-2.6-3.3-4-5.3-5.3-3.6-2.4-7.1-4.7-10.7-7.1-8.5-5.7-17.1-11.4-25.6-17.1-2-1.3-4-2.7-6-4-1.4-1-3.3-1-4.8 0-5.7 3.8-11.5 7.7-17.2 11.5L5.2 29C3 30.4.1 31.8 0 34.8c-.1 3.3 0 6.7 0 10v16c0 2.9-.6 6.3 2.1 8.1 6.4 4.4 12.9 8.6 19.4 12.9 8 5.3 16 10.7 24 16 2.2 1.5 4.4 3.1 7.1 1.3 2.3-1.5 4.5-3 6.8-4.5 8.9-5.9 17.8-11.9 26.7-17.8l9.9-6.6c.6-.4 1.3-.8 1.9-1.3 1.4-1 2-2.4 2-4.1V37.3c.1-1.1.2-2.1.1-3.1 0-.1 0 .2 0 0zM54.3 12.3L88 34.8 73 44.9 54.3 32.4V12.3zm-8.6 0v20L27.1 44.8 12 34.8l33.7-22.5zM8.6 42.8L19.3 50 8.6 57.2V42.8zm37.1 44.9L12 65.2l15-10.1 18.6 12.5v20.1zM50 60.2L34.8 50 50 39.8 65.2 50 50 60.2zm4.3 27.5v-20l18.6-12.5 15 10.1-33.6 22.4zm37.1-30.5L80.7 50l10.8-7.2-.1 14.4z"
+              ></path>
+            </svg>
+          </a>
+          <button class="navbar-close">
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-900 dark:text-gray-400 hover:bg-gray-400 hover:text-blue-600 rounded"
+                href="#"
+                >Home
+              </a>
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-900 dark:text-gray-400 hover:bg-gray-400 hover:text-blue-600 rounded"
+                href="#clients"
+                >Profile</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-900 dark:text-gray-400 hover:bg-gray-400 hover:text-blue-600 rounded"
+                href="#portfolio"
+                >Portfolio</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-900 dark:text-gray-400 hover:bg-gray-400 hover:text-blue-600 rounded"
+                href="#hire"
+                >Hire me</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="mt-auto">
+          <div class="pt-6"></div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
+    >
+      <div class="flex flex-wrap md:flex-nowrap">
+        <nav
+          class="inline-block lg:mr-24 lg:w-4 fixed left-percentage hidden xl:block"
+        >
+          <div
+            class="absolute left-50 transform -translate-x-1/2 space-y-6 mt-36"
+          >
+            <a
+              href="#"
+              class="nav-dot selected-circle block w-7 h-7 rounded-full border-4 border-nav bg-body"
+            >
+              <span
+                class="bg-blue-200 dark:bg-black px-2 py-1 rounded-md ml-10 opacity-0"
+                >Home</span
+              >
+            </a>
+            <a
+              href="#clients"
+              class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body"
+            >
+              <span
+                class="bg-blue-200 dark:bg-black px-2 py-1 rounded-md ml-10 opacity-0"
+                >Profile</span
+              >
+            </a>
+            <a
+              href="#portfolio"
+              class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body"
+            >
+              <span
+                class="bg-blue-200 dark:bg-black px-2 py-1 rounded-md ml-10 opacity-0"
+                >Portfolio</span
+              >
+            </a>
+            <a
+              href="#hire"
+              class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body"
+            >
+              <span
+                class="bg-blue-200 dark:bg-black px-2 py-1 rounded-md ml-10 opacity-0"
+                >Hire</span
+              >
+            </a>
+          </div>
+        </nav>
+
+        <div
+          class="flex flex-wrap lg:ml-20 justify-center md:justify-start max-w-xl mt-0 md:my-36"
+        >
+          <h1
+            class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl lg:text-left md:text-left"
+          >
+            I am <span class="multitext">Harrison M.</span>
+          </h1>
+          <div class="w-full flex justify-left md:justify-start">
+            <a
+              href="https://github.com/HarrisonMunguambe"
+              target="_blank"
+              class="px-8 py-4 bg-theme text-white font-bold mt-12 flex items-center space-x-3"
+            >
+              <div>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-mark-github"
+                  height="28"
+                  version="1.1"
+                  viewBox="0 0 16 16"
+                  width="28"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                  ></path>
+                </svg>
+              </div>
+              <span>View my Github</span>
+            </a>
+          </div>
+        </div>
+        <img
+          src="img/IMG_4543.PNG"
+          alt="Developer"
+          class="w-1/2 mt-12 md:absolute -mt-2 md:mt-0 right-0 -z-1 sm:hidden hidden xl:block"
+        />
+      </div>
+    </div>
+
+    <!-- Profile -->
+    <div
+      class="container mt-10 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
+    >
+      <section class="w-full">
+        <h2 id="clients" class="secondary-title mx-5">Profile</h2>
+
+        <!-- Clients -->
+        <div class="space-y-12 my-16 mx-5">
+          <div
+            class="w-full border border-nav p-16 lg:px-32 lg:py-20 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap"
+          >
+            <!-- Client logo -->
+            <div class="mb-6 lg:mb-0">
+              <img src="img/IMG-20220226-WA0057.jpg" class="w-3/3" />
+            </div>
+
+            <!-- Client info -->
+            <div
+              class="flex flex-wrap justify-center text-center lg:text-left lg:block"
+            >
+              <h3 class="text-black dark:text-white text-3xl font-semibold">
+                Harrison Munguambe
+              </h3>
+              <p class="text-gray-800 dark:text-secondary">
+                <br />
+                Studying and concluding my last year in computer engineering, at
+                Instituto Superior de Ciências e Tecnologia de Moçambique
+                (ISCTEM).
+              </p>
+              <p class="text-gray-800 dark:text-secondary">
+                <br />
+                I am Harrison, a very passionate person with technology, who
+                loves developing useful and beautiful websites using HTML5,
+                CSS3, Tailwind CSS and JavaScript, currently I'm perfecting my
+                knowledge in React Js.
+              </p>
+              <p class="text-gray-800 dark:text-secondary">
+                <br />
+                I have been teaching programming since 2020, I teach Java and I
+                find it to be an effective way to keep myself up to date.
+              </p>
+
+              <p class="text-gray-800 dark:text-secondary">
+                <br />
+                My biggest challenge is to create attractive, easy to use,
+                responsive and interactive web pages, receiving and operating in
+                the best way, data coming from an API and manipulate DOM in the
+                best way as possible.
+              </p>
+              <div
+                class="w-full lg:w-auto flex flex-wrap justify-center lg:justify-start gap-3 mt-6 mb-8"
+              >
+                <div class="gebad dark:badge">HTML5</div>
+                <div class="gebad dark:badge">CSS3</div>
+                <div class="gebad dark:badge">Tailwind CSS</div>
+                <div class="gebad dark:badge">JavaScript</div>
+                <div class="gebad dark:badge">Java</div>
+                <div class="gebad dark:badge">React JS</div>
+                <div class="gebad dark:badge">SQL</div>
+                <div class="gebad dark:badge">Bootstrap</div>
+                <div class="gebad dark:badge">Scrum Methodology</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Portfolio -->
+    <div
+      class="container mt-10 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
+    >
+      <section class="w-full">
+        <h2 id="portfolio" class="secondary-title mx-5">Portfolio</h2>
+
+        <!-- Clients -->
+        <div class="space-y-12 my-16 mx-5">
+          <div
+            class="w-full border border-nav p-16 lg:px-32 lg:py-20 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap"
+          >
+            <!-- Client logo -->
+            <div class="mb-6 lg:mb-0">
+              <img src="img/favicon-192.png" class="w-3/3" />
+            </div>
+
+            <!-- Client info -->
+            <div
+              class="flex flex-wrap justify-center text-center lg:text-left lg:block"
+            >
+              <h3 class="text-black dark:text-white text-3xl font-semibold">
+                Omnifood
+              </h3>
+              <p class="text-gray-800 dark:text-secondary">
+                <br />
+                A website for a mobile application, where users will use a
+                mobile app to select their diet, likes and dislikes foods, and
+                the ​​algorithm will create a personalized weekly meal plan.
+              </p>
+
+              <div
+                class="w-full lg:w-auto flex flex-wrap justify-center lg:justify-start gap-3 mt-6 mb-8"
+              >
+                <div class="gebad dark:badge">HTML5</div>
+                <div class="gebad dark:badge">CSS3</div>
+                <div class="gebad dark:badge">JavaScript</div>
+              </div>
+              <div class="w-full flex justify-left md:justify-start">
+                <a
+                  href="https://harrisonmunguambe.github.io/Omnifood/"
+                  target="_blank"
+                  class="px-4 py-2 bg-theme text-white font-bold mt-2 flex items-center space-x-3"
+                >
+                  <span>View website</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clients -->
+        <div class="space-y-12 my-16 mx-5">
+          <div
+            class="w-full border border-nav p-16 lg:px-32 lg:py-20 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap"
+          >
+            <!-- Client logo -->
+            <div class="mb-6 lg:mb-0">
+              <img src="img/unnamed-removebg-preview.png" class="w-3/3" />
+            </div>
+
+            <!-- Client info -->
+            <div
+              class="flex flex-wrap justify-center text-center lg:text-left lg:block"
+            >
+              <h3 class="text-black dark:text-white text-3xl font-semibold">
+                Dice Rolling Simulator
+              </h3>
+              <p class="text-gray-800 dark:text-secondary">
+                <br />
+                A Dice rolling simulator online game in which two players try to
+                roll a dice and see who will have the highest score at the end
+                of the game.
+              </p>
+
+              <div
+                class="w-full lg:w-auto flex flex-wrap justify-center lg:justify-start gap-3 mt-6 mb-8"
+              >
+                <div class="gebad dark:badge">HTML5</div>
+                <div class="gebad dark:badge">CSS3</div>
+
+                <div class="gebad dark:badge">JavaScript</div>
+              </div>
+              <div class="w-full flex justify-left md:justify-start">
+                <a
+                  href="https://harrisonmunguambe.github.io/JogoDeDados/"
+                  target="_blank"
+                  class="px-4 py-2 bg-theme text-white font-bold mt-2 flex items-center space-x-3"
+                >
+                  <span>View website</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Hire me -->
+    <div
+      class="container mt-14 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
+    >
+      <section class="w-full">
+        <h2 id="hire" class="secondary-title mx-5">Hire me</h2>
+        <p class="text-gray-800 dark:text-secondary mx-5">
+          Feel free to contact me any time, through any method below.
+        </p>
+        <div calss="section-title mx-5">
+          <!-- alert Mensagem start -->
+          <?php echo $alert;?>
+          <!-- <div class="alert-success section-paragraph mx-5">
+            <p>Message sent!</p>
+          </div> -->
+
+          <!-- alert Mensagem end -->
+          <!-- <div class="alert-error section-paragraph mx-5">
+            <p>Oops!! Message not sent! try again.</p>
+          </div> -->
+        </div>
+        <div class="w-full grid lg:grid-cols-2 gap-8 lg:gap-32 mt-24 mx-5">
+          <form action="" method="post" class="space-y-12">
+            <div>
+              <label
+                class="text-gray-800 dark:text-white block mb-6 text-xl font-bold"
+                >Name</label
+              >
+              <input
+                type="text"
+                name="nome"
+                required="required"
+                class="w-full border border-input-border dark:bg-input bg-indigo-50px-4 py-4"
+              />
+            </div>
+            <div>
+              <label
+                class="text-gray-800 dark:text-white block mb-6 text-xl font-bold"
+                >E-mail</label
+              >
+              <input
+                placeholder="Jéssica@gmail.com"
+                type="email"
+                name="email"
+                required="required"
+                class="w-full border border-input-border bg-indigo-50 dark:bg-input px-4 py-4"
+              />
+            </div>
+            <div>
+              <label
+                class="text-gray-800 dark:text-white block mb-6 text-xl font-bold"
+                >Message</label
+              >
+              <textarea
+                required="required"
+                name="mensagem"
+                class="w-full border border-input-border bg-indigo-50 dark:bg-input px-4 py-4 h-56 resize-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              name="submit"
+              class="px-6 py-2 bg-theme text-white font-bold"
+            >
+              Send it!
+            </button>
+          </form>
+
+          <div class="mt-12">
+            <!-- Contact info -->
+            <p class="text-black dark:text-secondary">
+              Cell: <br />
+              +258 843 690 842 <br />+258 878 150 644
+            </p>
+            <!-- <a
+              href="mailto:harrison.munguambe17@gmail.com"
+              class="text-black dark:text-secondary hover:underline mt-3 block"
+              >harrison.munguambe17@gmail.com</a
+            > -->
+
+            <!-- Socials i-->
+            <div class="flex mt-20 space-x-6">
+              <!-- Whatsapp -->
+              <a href="https://wa.me/+258843690842" target="_blank">
+                <svg
+                  width="64px"
+                  height="64px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#fafafa"
+                  class="fill-current text-black"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M17.6 6.31999C16.8669 5.58141 15.9943 4.99596 15.033 4.59767C14.0716 4.19938 13.0406 3.99622 12 3.99999C10.6089 4.00135 9.24248 4.36819 8.03771 5.06377C6.83294 5.75935 5.83208 6.75926 5.13534 7.96335C4.4386 9.16745 4.07046 10.5335 4.06776 11.9246C4.06507 13.3158 4.42793 14.6832 5.12 15.89L4 20L8.2 18.9C9.35975 19.5452 10.6629 19.8891 11.99 19.9C14.0997 19.9001 16.124 19.0668 17.6222 17.5816C19.1205 16.0965 19.9715 14.0796 19.99 11.97C19.983 10.9173 19.7682 9.87634 19.3581 8.9068C18.948 7.93725 18.3505 7.05819 17.6 6.31999ZM12 18.53C10.8177 18.5308 9.65701 18.213 8.64 17.61L8.4 17.46L5.91 18.12L6.57 15.69L6.41 15.44C5.55925 14.0667 5.24174 12.429 5.51762 10.8372C5.7935 9.24545 6.64361 7.81015 7.9069 6.80322C9.1702 5.79628 10.7589 5.28765 12.3721 5.37368C13.9853 5.4597 15.511 6.13441 16.66 7.26999C17.916 8.49818 18.635 10.1735 18.66 11.93C18.6442 13.6859 17.9355 15.3645 16.6882 16.6006C15.441 17.8366 13.756 18.5301 12 18.53ZM15.61 13.59C15.41 13.49 14.44 13.01 14.26 12.95C14.08 12.89 13.94 12.85 13.81 13.05C13.6144 13.3181 13.404 13.5751 13.18 13.82C13.07 13.96 12.95 13.97 12.75 13.82C11.6097 13.3694 10.6597 12.5394 10.06 11.47C9.85 11.12 10.26 11.14 10.64 10.39C10.6681 10.3359 10.6827 10.2759 10.6827 10.215C10.6827 10.1541 10.6681 10.0941 10.64 10.04C10.64 9.93999 10.19 8.95999 10.03 8.56999C9.87 8.17999 9.71 8.23999 9.58 8.22999H9.19C9.08895 8.23154 8.9894 8.25465 8.898 8.29776C8.8066 8.34087 8.72546 8.403 8.66 8.47999C8.43562 8.69817 8.26061 8.96191 8.14676 9.25343C8.03291 9.54495 7.98287 9.85749 8 10.17C8.0627 10.9181 8.34443 11.6311 8.81 12.22C9.6622 13.4958 10.8301 14.5293 12.2 15.22C12.9185 15.6394 13.7535 15.8148 14.58 15.72C14.8552 15.6654 15.1159 15.5535 15.345 15.3915C15.5742 15.2296 15.7667 15.0212 15.91 14.78C16.0428 14.4856 16.0846 14.1583 16.03 13.84C15.94 13.74 15.81 13.69 15.61 13.59Z"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+              <!-- IG -->
+              <a href="https://www.instagram.com/harry_mungs/" target="_blank">
+                <svg
+                  stroke="#fafafa"
+                  class="fill-current text-black"
+                  width="64px"
+                  height="64px"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z"
+                    ></path>
+                    <path
+                      d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <p class="text-black dark:text-secondary">
+              <br />
+              <br />
+              Copyright © 2023 <br />
+              Designed and Created by Harrison Munguambe. <br />
+              All rights reserved.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="scripts.js
+    "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      var typingEffect = new Typed(".multitext", {
+        strings: ["Harrison M.", "Harrison M.", "a Front-end Developer"],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1700,
+      });
+    </script>
+  </body>
+</html>
