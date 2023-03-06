@@ -10,15 +10,6 @@
       type="image/x-icon"
     />
     <title>Portfólio</title>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("8ENLYbozOcXpturCQ");
-      })();
-    </script>
   </head>
   <body class="bg-gray-100 dark:bg-body text-black dark:text-white pb-12">
     <header class="py-6 text-black dark:text-white dark:bg-body lg:border-b-2">
@@ -416,7 +407,25 @@
         </p>
         <div calss="section-title mx-5"></div>
         <div class="w-full grid lg:grid-cols-2 gap-8 lg:gap-32 mt-24 mx-5">
-          <form class="space-y-12">
+          <form
+            class="space-y-12"
+            action="https://api.staticforms.xyz/submit"
+            method="POST"
+          >
+            <!-- Replace with accesKey sent to your email -->
+            <input
+              type="hidden"
+              name="accessKey"
+              value="12ddf419-40cb-4cde-b930-2c31ad244ba4"
+            />
+            <!-- Required -->
+            <!-- If you want form to redirect to a specific url after submission -->
+            <input
+              type="hidden"
+              name="redirectTo"
+              value="https://harrisonmunguambe.netlify.app/"
+            />
+            <!-- Optional -->
             <div>
               <label
                 class="text-gray-800 dark:text-white block mb-6 text-xl font-bold"
@@ -426,7 +435,7 @@
               <input
                 placeholder="Jéssica@gmail.com"
                 type="email"
-                name="Email"
+                name="email"
                 required="required"
                 class="w-full border border-input-border bg-indigo-50 dark:bg-input px-4 py-4"
                 id="email"
@@ -440,10 +449,9 @@
               >
               <input
                 type="text"
-                name="Subject"
+                name="subject"
                 required="required"
                 class="w-full border border-input-border bg-indigo-50 dark:bg-input px-4 py-4"
-                id="name"
               />
             </div>
             <div>
@@ -454,7 +462,7 @@
               >
               <textarea
                 required="required"
-                name="Message"
+                name="message"
                 class="w-full border border-input-border bg-indigo-50 dark:bg-input px-4 py-4 h-56 resize-none"
                 id="message"
               ></textarea>
@@ -462,7 +470,6 @@
             <button
               type="submit"
               name="submit"
-              onclick="sendMail()"
               class="px-6 py-2 bg-theme text-white font-bold"
             >
               Send it!
@@ -559,30 +566,25 @@
         backDelay: 1700,
       });
     </script>
+    <!-- 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <script>
-      //email
-      function sendMail() {
-        var params = {
-          name: document.getElementById("name").value,
-          email: document.getElementById("email").value,
-          message: document.getElementById("message").value,
-        };
+      function sebdEmail(e) {
+        e.preventDefault();
 
-        const serviceID = "service_g0n9far";
-        const templateID = "template_oh5hngs";
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "harrison.munguambe17@gmail.com",
+          Password: "CA39D8137FF9E8A73FC1567DF97D7F23A059",
+          To: "harrison.munguambe17@gmail.com",
+          From: document.getElementById("exampleInputEmail1").value,
+          Subject: document.getElementById("exampleFormControlSubject").value,
+          Body: document.getElementById("exampleFormControlTextarea1").value,
+        }).then((message) => alert(message));
 
-        emailjs
-          .send(serviceID, templateID, params)
-          .then((res) => {
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("message").value = "";
-            console.log(res);
-            alert("Your message sent successfully!!");
-          })
-          .catch((err) => console.log(err));
+        return true;
       }
-    </script>
+    </script> -->
   </body>
 </html>
