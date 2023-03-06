@@ -407,7 +407,12 @@
         </p>
         <div calss="section-title mx-5"></div>
         <div class="w-full grid lg:grid-cols-2 gap-8 lg:gap-32 mt-24 mx-5">
-          <form onsubmit="sebdEmail(event)" class="space-y-12">
+          <form
+            class="space-y-12"
+            action="https://formspree.io/f/xzbqgqpe"
+            target="_blank"
+            method="POST"
+          >
             <div>
               <label
                 class="text-gray-800 dark:text-white block mb-6 text-xl font-bold"
@@ -417,7 +422,7 @@
               <input
                 placeholder="Jéssica@gmail.com"
                 type="email"
-                name="email"
+                name="Email"
                 required="required"
                 class="w-full border border-input-border bg-indigo-50 dark:bg-input px-4 py-4"
                 id="exampleInputEmail1"
@@ -431,7 +436,7 @@
               >
               <input
                 type="text"
-                name="nome"
+                name="Subject"
                 required="required"
                 class="w-full border border-input-border bg-indigo-50 dark:bg-input px-4 py-4"
                 id="exampleFormControlSubject"
@@ -445,7 +450,7 @@
               >
               <textarea
                 required="required"
-                name="mensagem"
+                name="Message"
                 class="w-full border border-input-border bg-indigo-50 dark:bg-input px-4 py-4 h-56 resize-none"
                 id="exampleFormControlTextarea1"
               ></textarea>
@@ -549,7 +554,7 @@
         backDelay: 1700,
       });
     </script>
-
+    <!-- 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <script>
@@ -568,6 +573,6 @@
 
         return true;
       }
-    </script>
+    </script> -->
   </body>
 </html>
